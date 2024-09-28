@@ -1,7 +1,10 @@
+require("dotenv").config(); // to access environment variables
 const { MongoClient } = require("mongodb");
 
 const DB_URI =
-  "mongodb+srv://ajaydewangan1100:<Password_here>@cluster0.rrg8o.mongodb.net/";
+  "mongodb+srv://ajaydewangan1100:" +
+  process.env.DB_USER_PASS +
+  "@cluster0.rrg8o.mongodb.net/";
 
 const client = new MongoClient(DB_URI);
 
